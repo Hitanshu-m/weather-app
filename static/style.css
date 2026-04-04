@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    transition: 0.4s;
+}
+
+/* Card */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    width: 340px;
+    border-radius: 20px;
+    text-align: center;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Top bar */
+.top-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.top-bar button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Input */
+input {
+    padding: 12px;
+    width: 85%;
+    border-radius: 12px;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    background: #f0f0f0;
+}
+
+/* Button */
+button {
+    padding: 12px;
+    margin-top: 10px;
+    width: 90%;
+    border: none;
+    border-radius: 12px;
+    background: #4facfe;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #00c6ff;
+}
+
+/* Weather box */
+.weather-box {
+    margin-top: 20px;
+}
+
+/* Temperature */
+.temp {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+/* Condition */
+.condition {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Details */
+.details {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* Error */
+.error {
+    color: red;
+}
+
+/* Dark mode */
+.dark {
+    background: linear-gradient(to right, #232526, #414345);
+}
+
+.dark .container {
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+}
+
+.dark input {
+    background: #444;
+    color: white;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}

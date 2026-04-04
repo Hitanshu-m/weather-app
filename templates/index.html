@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌦️ वातावरण निर्देशक </h1>
+
+    <div class="top-bar">
+        <button onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city (e.g. Nagpur,IN)" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if weather %}
+        {% if weather.error %}
+            <p class="error">{{ weather.error }}</p>
+        {% else %}
+            <div class="weather-box">
+                <h2>{{ weather.city }}</h2>
+                <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+                <h1 class="temp">{{ weather.temp }}°C</h1>
+                <p class="condition">{{ weather.condition }}</p>
+
+                <div class="details">
+                    <div>🔥 Feels: {{ weather.feels }}°C</div>
+                    <div>💧 Humidity: {{ weather.humidity }}%</div>
+                    <div>💨 Wind: {{ weather.wind }} m/s</div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
